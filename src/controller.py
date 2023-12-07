@@ -87,3 +87,5 @@ def list_devices():
     """
     port = rm.list_resources()
     return port
+print(list_devices())
+#('ASRL::SIMLED::INSTR', 'ASRL::SIMPV::INSTR', 'ASRL::SIMPV_BRIGHT::INSTR')

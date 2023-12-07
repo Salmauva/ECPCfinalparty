@@ -8,6 +8,10 @@ packages = [{include = "party", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+numpy = "^1.26.2"
+matplotlib = "^3.8.2"
+pyvisa-py = "^0.7.1"
+pyserial = "^3.5"
 
 
 [tool.poetry.group.dev.dependencies]
