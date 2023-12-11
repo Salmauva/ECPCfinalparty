@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 import csv
 
 # call the controller and ports list
-from controller import ArduinoVISADevice, list_devices
+from party.controller import ArduinoVISADevice, list_devices
 
 # call the model and ports list
-from model import DiodeExperiment, list_devices
+from party.model import DiodeExperiment, list_devices
 
 
 """choose the port and plot the current as function of voltage and save the data with errors in csv document"""

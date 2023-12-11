@@ -2,13 +2,13 @@
 
 # Import the needed libraries
 import numpy as np
-import pyvisa
+# import pyvisa
 
 # open device
-rm = pyvisa.ResourceManager("@py")
+# rm = pyvisa.ResourceManager("@py")
 
 # call controller from the other document
-from controller import ArduinoVISADevice, list_devices
+from party.controller import ArduinoVISADevice, list_devices
 
 
 class DiodeExperiment:

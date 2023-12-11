@@ -1,10 +1,9 @@
 # Salma Abd Adin, script for controller
 
 # Import the needed libraries
-try:
-    from nsp2visasim import sim_pyvisa as pyvisa
-except ModuleNotFoundError:
-    import pyvisa
+
+from nsp2visasim import sim_pyvisa as pyvisa
+
 
 
 # open device

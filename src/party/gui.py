@@ -5,9 +5,9 @@ import numpy as np
 import csv
 import sys
 from PySide6 import QtWidgets
-from ui_mainwindow import Ui_MainWindow
+from party.ui_mainwindow import Ui_MainWindow
 import pyqtgraph as pg
-from model import DiodeExperiment, list_devices
+from party.model import DiodeExperiment, list_devices
 
 # PyQtGraph global options
 pg.setConfigOption("background", "w")
@@ -34,6 +34,7 @@ class UserInterface(QtWidgets.QMainWindow):
         self.ui.clear_button.clicked.connect(self.plot)
         self.ui.save_data.clicked.connect(self.save_data)
         self.ui.device_button.addItems(list_devices())
+        print(list_devices())
 
     def plot(self):
         """making plot with errorbars based on the given min,max, number of measurments and which port.
@@ -87,5 +88,5 @@ def main():
     sys.exit(app.exec())
 
 # making a command line
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
