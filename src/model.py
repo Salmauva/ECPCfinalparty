@@ -69,7 +69,7 @@ class DiodeExperiment:
                 u_chanel_1 = self.device.get_input_voltage(channel=1)
                 u_chanel_2 = self.device.get_input_voltage(channel=2)
                 u_value = u_chanel_1 - u_chanel_2
-                u_list_per_point.append(u_value)
+                u_list_per_point.append(u_chanel_1*3)
                 ampere = u_chanel_2 / 4.7
                 i_list_per_point.append(ampere)
 

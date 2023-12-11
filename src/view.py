@@ -28,17 +28,16 @@ plt.errorbar(
 )
 plt.xlabel("Voltage [V]")
 plt.ylabel("Current [A]")
-plt.xlim(0, 3)
-plt.ylim(0, 0.003)
-plt.savefig("plot.jpg")
-
+# plt.xlim(0, 3)
+# plt.ylim(0, 0.003)
+# plt.savefig("plot.jpg")
+plt.show()
 # make a csv document, add the errors too
 with open("measurments.csv", "w", newline="") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["U [V]", "I [A]", "U_error [V]", "I_error [A]"])
     for a, b, c, d in zip(voltage, current, voltage_error, current_error):
         writer.writerow([a, b, c, d])
-
 # adding commando
 # if __name__ == "__main__":
 #     view()
