@@ -5,9 +5,9 @@ import numpy as np
 import csv
 import sys
 from PySide6 import QtWidgets
-from pythondaq.ui_mainwindow import Ui_MainWindow
+from ui_mainwindow import Ui_MainWindow
 import pyqtgraph as pg
-from pythondaq.diode_experiment import DiodeExperiment, list_devices
+from model import DiodeExperiment, list_devices
 
 # PyQtGraph global options
 pg.setConfigOption("background", "w")
