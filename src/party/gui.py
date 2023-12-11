@@ -26,8 +26,7 @@ class UserInterface(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
 
         # making x and y-axis labels
-        self.ui.plot_widget.setLabel("left", "Current (A)")
-        self.ui.plot_widget.setLabel("bottom", "Voltage (V)")
+
         self.show()
 
         # make signals
@@ -64,6 +63,8 @@ class UserInterface(QtWidgets.QMainWindow):
                 x=np.array(voltage), y=np.array(current), width=2 * np.array(voltage_error), height=2 * np.array(current_error)
             )
             self.ui.plot_widget.addItem(error_bars)
+            self.ui.plot_widget.setLabel("left", "Current (A)")
+            self.ui.plot_widget.setLabel("bottom", "Voltage (V)")
 
             # saving u,i,u-error and i-error in the class 
             self.u = voltage
@@ -97,7 +98,8 @@ class UserInterface(QtWidgets.QMainWindow):
                 x=np.array(r_list_plot), y=np.array(p_list_plot), width=2 * np.array(r_list_error_plot), height=2 * np.array(p_list_error_plot)
             )
             self.ui.plot_widget.addItem(error_bars)
-
+            self.ui.plot_widget.setLabel("left", "Power (W)")
+            self.ui.plot_widget.setLabel("bottom", "Resistance (ohm)")
             # saving r,p,r-error and p-error in the class 
             self.r = r_list_plot
             self.p = p_list_plot
@@ -110,12 +112,22 @@ class UserInterface(QtWidgets.QMainWindow):
     def save_data (self):
         """saving data as csv-file with the insterted name whenever user clickes on 'save' and intering namefile
         """        
-        filename, _ = QtWidgets.QFileDialog.getSaveFileName(filter="CSV files (*.csv)")
-        with open(f"{filename}", "w", newline="") as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(["U [V]", "I [A]", "U_error [V]", "I_error [A]"])
-            for a, b, c, d in zip(self.u, self.i, self.u_error, self.i_error):
-                writer.writerow([a, b, c, d])
+        choose_plot = self.ui.plotmenu.currentText()
+
+        if choose_plot == "IU":
+            filename, _ = QtWidgets.QFileDialog.getSaveFileName(filter="CSV files (*.csv)")
+            with open(f"{filename}", "w", newline="") as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(["U [V]", "I [A]", "U_error [V]", "I_error [A]"])
+                for a, b, c, d in zip(self.u, self.i, self.u_error, self.i_error):
+                    writer.writerow([a, b, c, d])
+        if choose_plot == "PR":
+            filename, _ = QtWidgets.QFileDialog.getSaveFileName(filter="CSV files (*.csv)")
+            with open(f"{filename}", "w", newline="") as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(["R [Ohm]", "P [W]", "R_error [Ohm]", "P_error [W]"])
+                for a, b, c, d in zip(self.r, self.p, self.r_error, self.p_error):
+                    writer.writerow([a, b, c, d])
 
 def main():
     """showing the grafical user interface
