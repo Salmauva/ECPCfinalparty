@@ -121,6 +121,7 @@ class UserInterface(QtWidgets.QMainWindow):
                 writer.writerow(["U [V]", "I [A]", "U_error [V]", "I_error [A]"])
                 for a, b, c, d in zip(self.u, self.i, self.u_error, self.i_error):
                     writer.writerow([a, b, c, d])
+                    
         if choose_plot == "PR":
             filename, _ = QtWidgets.QFileDialog.getSaveFileName(filter="CSV files (*.csv)")
             with open(f"{filename}", "w", newline="") as csvfile:
