@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>883</width>
-    <height>649</height>
+    <width>557</width>
+    <height>571</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,10 +18,17 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+      </item>
+      <item>
        <widget class="PlotWidget" name="plot_widget"/>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3"/>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QComboBox" name="plotmenu"/>
+        </item>
+       </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -102,7 +109,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>883</width>
+     <width>557</width>
      <height>22</height>
     </rect>
    </property>

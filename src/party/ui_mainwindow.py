@@ -25,13 +25,18 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(883, 649)
+        MainWindow.resize(557, 571)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
+
         self.plot_widget = PlotWidget(self.centralwidget)
         self.plot_widget.setObjectName(u"plot_widget")
 
@@ -39,6 +44,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.plotmenu = QComboBox(self.centralwidget)
+        self.plotmenu.setObjectName(u"plotmenu")
+
+        self.horizontalLayout_3.addWidget(self.plotmenu)
+
 
         self.verticalLayout.addLayout(self.horizontalLayout_3)
 
@@ -96,7 +106,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 883, 22))
+        self.menubar.setGeometry(QRect(0, 0, 557, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")

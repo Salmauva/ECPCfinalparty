@@ -77,10 +77,11 @@ class DiodeExperiment:
                 u_list_per_point.append(u_chanel_1*3)
                 ampere = u_chanel_2 / 4.7
                 i_list_per_point.append(ampere)
-                power = (u_chanel_1 * 3) * ampere
-                p_list_per_point.append(power)
-                resistance = (u_chanel_1 * 3) / ampere
-                r_list_per_point.append(resistance)
+                if ampere != 0:
+                    power = (u_chanel_1 * 3) * ampere
+                    p_list_per_point.append(power)
+                    resistance = (u_chanel_1 * 3) / ampere
+                    r_list_per_point.append(resistance)
 
             # lists for the plot
             u_list_error_plot.append(np.std(u_list_per_point) / (n**0.5))
